@@ -1,0 +1,16 @@
+current directory: /Users/fidenhan/code/Gloglok/rails-pets-never-die/vendor/bundle/ruby/2.7.0/gems/racc-1.5.2/ext/racc/cparse
+/Users/fidenhan/.rbenv/versions/2.7.3/bin/ruby -I /Users/fidenhan/.rbenv/versions/2.7.3/lib/ruby/2.7.0 -r ./siteconf20210816-81819-42k9l.rb extconf.rb
+checking for rb_ary_subseq()... yes
+creating Makefile
+
+current directory: /Users/fidenhan/code/Gloglok/rails-pets-never-die/vendor/bundle/ruby/2.7.0/gems/racc-1.5.2/ext/racc/cparse
+make "DESTDIR=" clean
+
+current directory: /Users/fidenhan/code/Gloglok/rails-pets-never-die/vendor/bundle/ruby/2.7.0/gems/racc-1.5.2/ext/racc/cparse
+make "DESTDIR="
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+
+current directory: /Users/fidenhan/code/Gloglok/rails-pets-never-die/vendor/bundle/ruby/2.7.0/gems/racc-1.5.2/ext/racc/cparse
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cparse.bundle ./.gem.20210816-81819-1mml6xf/racc
