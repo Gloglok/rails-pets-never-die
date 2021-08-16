@@ -78,8 +78,7 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+
 production:
   <<: *default
-  database: rails_pets_never_die_production
-  username: rails_pets_never_die
-  password: <%= ENV['RAILS_PETS_NEVER_DIE_DATABASE_PASSWORD'] %>
+  url: <%= ENV['POSTGRESQL_ADDON_URI'] %>
