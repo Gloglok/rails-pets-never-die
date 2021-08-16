@@ -1,0 +1,11 @@
+{
+  "apps": [
+    {
+      "app_id": "app_dbf0b7e6-ee94-4649-919d-6f0f8b8500de",
+      "org_id": "user_eac97958-d5db-4c5c-92ed-fd79c8e6ecda",
+      "deploy_url": "https://push-n2-par-clevercloud-customers.services.clever-cloud.com/app_dbf0b7e6-ee94-4649-919d-6f0f8b8500de.git",
+      "name": "Pets never die",
+      "alias": "Pets-never-die"
+    }
+  ]
+}
