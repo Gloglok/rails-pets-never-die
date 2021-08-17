@@ -1,8 +1,22 @@
 .card-show {
   height: 400px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .card-show img {
   width: 40%;
   object-fit: cover;
+}
+
+.card-show p {
+  font-size: 20px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-show-description {
+  height: 100%;
+  padding: 16px;
 }

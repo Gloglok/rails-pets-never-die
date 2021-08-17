@@ -1,21 +1,27 @@
-<div class="container">
-  <h1><%= @stuffed_animal.name %></h1>
+<div class="container mt-5">
+  <h1 class="mb-3"><%= @stuffed_animal.name %></h1>
 
   <div>
     <div class="card-product card-show">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <%= cl_image_tag @stuffed_animal.photo.key, crop: :fill %>
       <div class="card-product-infos">
-        <% [:species, :weight, :rebirth_date, :user_id , :address, :price].each do |field| %>
+        <% [:species, :rebirth_date].each do |field| %>
         <p> <%= field.to_s.humanize %> : <%= @stuffed_animal.send(field) %>
         </p>
       <% end %>
+      <p>Weight : <%= @stuffed_animal.weight %>🏋️</p>
+      <p>Price : <%= @stuffed_animal.price %>₿</p>
+      <p>Owner name : <%= @stuffed_animal.user.last_name.capitalize %></p>
+      <p>📍 <%= @stuffed_animal.address %></p>
       </div>
     </div>
-    <%= link_to "Commander" %>
+    <div class="btn btn-primary my-5">
+    <%= link_to "Commander", class:'btn btn-primary my-5' %>
+    </div>
   </div>
-
-  <div class="">
-    <p><%= @stuffed_animal.description %></p>
+  <p class="mb-0 pl-3">Un peu d'histoire sur <strong><%= @stuffed_animal.name %></strong></p>
+  <div class="card-product card-show card-show-description mt-0">
+    <p>❝<%= @stuffed_animal.description %>❝</p>
   </div>
 
   <div class="">
@@ -23,5 +29,7 @@
     <%# map %>
   </div>
 
-  <%= link_to "Retour", stuffed_animals_path %>
+  <div class="btn btn btn-secondary my-5">
+    <%= link_to "Retour", stuffed_animals_path %>
+  </div>
 </div>
