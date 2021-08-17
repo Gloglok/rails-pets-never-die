@@ -22,6 +22,10 @@ class StuffedAnimalsController < ApplicationController
     end
   end
 
+  def dashboard
+    @stuffed_animal = StuffedAnimal.find()
+  end
+
   private
 
   def stuffed_animal_params
