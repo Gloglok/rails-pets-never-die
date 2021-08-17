@@ -1,0 +1,22 @@
+<h1>Add your stuffed animal</h1>
+
+
+<div class='container m-3'>
+  <div class='row'>
+    <div class='col-sm'>
+    <%= simple_form_for @stuffed_animal do |f| %>
+      <%= f.input :name %>
+      <%= f.input :address %>
+      <%= f.input :description %>
+      <%= f.input :species %>
+      <%= f.input :price %>
+      <%= f.input :rebirth_date, as: :date, html5: true %>
+      <%= f.button :submit, class: "btn btn-primary" %>
+    </div>
+
+    <div class='col-sm'>
+      <%= f.input :photo, as: :file %>
+    </div>
+    <% end %>
+  </div>
+</div>
