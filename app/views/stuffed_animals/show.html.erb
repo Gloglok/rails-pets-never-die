@@ -6,27 +6,35 @@
       <%= cl_image_tag @stuffed_animal.photo.key, crop: :fill %>
       <div class="card-product-infos">
         <% [:species, :rebirth_date].each do |field| %>
-        <p> <%= field.to_s.humanize %> : <%= @stuffed_animal.send(field) %>
-        </p>
-      <% end %>
-      <p>Weight : <%= @stuffed_animal.weight %>🏋️</p>
-      <p>Price : <%= @stuffed_animal.price %>₿</p>
-      <p>Owner name : <%= @stuffed_animal.user.last_name.capitalize %></p>
-      <p>📍 <%= @stuffed_animal.address %></p>
+          <p> <%= field.to_s.humanize %> : <%= @stuffed_animal.send(field) %></p>
+        <% end %>
+        <p>Weight : <%= @stuffed_animal.weight %>🏋️</p>
+        <p>Price : <%= @stuffed_animal.price %>₿</p>
+        <p>Owner name : <%= @stuffed_animal.user.last_name.capitalize %></p>
+        <p>📍 <%= @stuffed_animal.address %></p>
       </div>
     </div>
-    <div class="btn btn-primary my-5">
-    <%= link_to "Commander", class:'btn btn-primary my-5' %>
-    </div>
   </div>
-  <p class="mb-0 pl-3">Un peu d'histoire sur <strong><%= @stuffed_animal.name %></strong></p>
-  <div class="card-product card-show card-show-description mt-0">
+
+  <p class="mb-0 mt-5 pl-3">Un peu d'histoire sur <strong><%= @stuffed_animal.name %></strong></p>
+  <div class="card-product card-show card-show-description mt-0 mb-5">
     <p>❝<%= @stuffed_animal.description %>❝</p>
   </div>
 
   <div class="">
     <%# avis %>
     <%# map %>
+  </div>
+
+  <div class='row'>
+    <div class='col-sm'>
+      <%= simple_form_for([@stuffed_animal, @reservation]) do |f| %>
+        <%= f.input :total_price %>
+        <%= f.input :start_date, as: :date, html5: true %>
+        <%= f.input :end_date, as: :date, html5: true %>
+        <%= f.button :submit, class: "btn btn-primary" %>
+      <% end %>
+    </div>
   </div>
 
   <div class="btn btn btn-secondary my-5">
