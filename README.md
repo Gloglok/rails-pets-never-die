@@ -1,1 +1,18 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+App production: <a href="https://pets-never-die.cleverapps.io/" target="_blank">here</a>
+
+# To start app:
+
+```console
+git clone git@github.com:Gloglok/rails-pets-never-die.git
+cd rails-pets-never-die
+touch .env
+bundle install
+yarn install
+rails db:create
+rails db:migrate
+rails db:seed
+rails s
+```
+
+## Don't forget to add cloudinary url into .env file
+CLOUDINARY_URL=cloudinary://*************
