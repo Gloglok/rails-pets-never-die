@@ -2,10 +2,10 @@
   <h1><%= @stuffed_animal.name %></h1>
 
   <div>
-    <div class="card-product">
+    <div class="card-product card-show">
       <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
       <div class="card-product-infos">
-        <% [:name, :species, :weight, :rebirth_date, :user_id , :adress, :price].each do |field| %>
+        <% [:species, :weight, :rebirth_date, :user_id , :address, :price].each do |field| %>
         <p> <%= field.to_s.humanize %> : <%= @stuffed_animal.send(field) %>
         </p>
       <% end %>
