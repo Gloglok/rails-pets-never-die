@@ -10,12 +10,12 @@
     font-family: $p-font;
   }
 
-  .index-map {
-    background-image: url('mapbox.png');
-    background-repeat: no-repeat;
-    background-size: 100%;
+  .index-map img{
     position: sticky;
-    top: 200px;
+    top: 5px;
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
   }
 }
 
@@ -26,5 +26,8 @@
 @media (max-width: 1140px) {
   .index-container {
     grid-template-columns: 1fr;
+  }
+  .index-map img{
+    margin-top: 50px;
   }
 }
