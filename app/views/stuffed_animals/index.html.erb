@@ -1,14 +1,20 @@
-<div>
-  <% @stuffed_animals.each do |stuffed_animal| %>
-    <div class="card-product">
-      <div class="card-product-infos">
-        <h2><%= stuffed_animal.name %></h2>
-        <p>Product description with <strong>relevant info</strong> only.</p>
-      </div>
-    </div>
-  <% end %>
+<div class="index-container">
+  <div class="index-cards">
+    <% @stuffed_animals.each do |stuffed_animal| %>
+      <%= link_to stuffed_animal_path(stuffed_animal) do%>
+        <div class="card-product mb-2">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <div class="card-product-infos">
+            <h2><%= stuffed_animal.name %></h2>
+            <p class="index-card-text"><%= stuffed_animal.description[0...250]%>...</p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 
-  <div class="carte">
+
+  <div class="index-carte">
 
   </div>
 </div>
