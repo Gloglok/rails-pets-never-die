@@ -26,6 +26,6 @@ class StuffedAnimalsController < ApplicationController
 
   def stuffed_animal_params
     params.require(:stuffed_animal).permit(:name, :species, :user_id, :description,
-                                           :rebirth_date, :price, :weight, :address)
+                                           :rebirth_date, :price, :weight, :address, :photo)
   end
 end
