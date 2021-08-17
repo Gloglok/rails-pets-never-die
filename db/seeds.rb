@@ -177,7 +177,7 @@ file = File.open(Rails.root.join('db/fixtures/stuffed_animals/cat2.jpg'))
 totoro.photo.attach(io: file, filename: 'cat2.jpg', content_type: 'image/jpeg')
 totoro.save!
 
-StuffedAnimal.new(
+chat_potte = StuffedAnimal.new(
   name: 'Le Chat Potté',
   species: 'chat',
   description: "Individualiste et charmeur, le Chat Potté est un Don Juan, comme le suggère une scène de Shrek le troisième, attirant ses congénères du beau sexe, leur promettant l'amour éternel mais prenant la fuite dès qu'elles semblent vouloir s'attacher à lui. Il n'aime pas la compagnie encombrante et tumultueuse des enfants de l'Âne lorsque ceux-ci se jettent sur lui, alors qu'ils le prennent pour leur père.",
