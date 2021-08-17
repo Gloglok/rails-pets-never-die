@@ -1,2 +1,30 @@
 @import "show";
 @import "new";
+
+
+.index-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  h1 {
+    font-family: $p-font;
+  }
+
+  .index-map {
+    background-image: url('mapbox.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: sticky;
+    top: 200px;
+  }
+}
+
+.card-index-img {
+  min-width: 120px;
+}
+
+@media (max-width: 1140px) {
+  .index-container {
+    grid-template-columns: 1fr;
+  }
+}
