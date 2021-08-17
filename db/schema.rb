@@ -10,10 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_16_145556) do
+ActiveRecord::Schema.define(version: 2021_08_16_160654) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "reservations", force: :cascade do |t|
+    t.date "start_date"
+    t.date "end_date"
+    t.bigint "stuffed_animal_id", null: false
+    t.bigint "user_id", null: false
+    t.string "status", default: "pending"
+    t.float "total_price"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["stuffed_animal_id"], name: "index_reservations_on_stuffed_animal_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
+  end
+
+  create_table "stuffed_animals", force: :cascade do |t|
+    t.string "name"
+    t.string "species"
+    t.text "description"
+    t.string "adress"
+    t.float "weight"
+    t.bigint "user_id", null: false
+    t.float "price"
+    t.date "rebirth_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_stuffed_animals_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -29,4 +56,7 @@ ActiveRecord::Schema.define(version: 2021_08_16_145556) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "reservations", "stuffed_animals"
+  add_foreign_key "reservations", "users"
+  add_foreign_key "stuffed_animals", "users"
 end
