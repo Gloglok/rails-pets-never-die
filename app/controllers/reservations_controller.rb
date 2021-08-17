@@ -1,6 +1,6 @@
 class ReservationsController < ApplicationController
   before_action :find_stuffed_animal, only: [:create]
-  before_action :find_reservation, only: [:accept, :decline]
+  before_action :find_reservation, only: %i[accept decline]
 
   def accept
     @reservation.status = 'Accepted'
