@@ -1,0 +1,27 @@
+<div class="container">
+  <h1><%= @stuffed_animal.name %></h1>
+
+  <div>
+    <div class="card-product">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <div class="card-product-infos">
+        <% [:name, :species, :weight, :rebirth_date, :user_id , :adress, :price].each do |field| %>
+        <p> <%= field.to_s.humanize %> : <%= @stuffed_animal.send(field) %>
+        </p>
+      <% end %>
+      </div>
+    </div>
+    <%= link_to "Commander" %>
+  </div>
+
+  <div class="">
+    <p><%= @stuffed_animal.description %></p>
+  </div>
+
+  <div class="">
+    <%# avis %>
+    <%# map %>
+  </div>
+
+  <%= link_to "Retour", stuffed_animals_path %>
+</div>
