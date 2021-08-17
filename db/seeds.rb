@@ -1,7 +1,156 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+puts "Cleaning database..."
+
+StuffedAnimal.destroy_all
+User.destroy_all
+
+puts "Generate users.."
+
+arthur = User.create!(first_name: "arthur", last_name: "bernard", email: 'arthur@example.com', password: "azerty")
+maxime = User.create!(first_name: "maxime", last_name: "haugmard", email: 'maxime@example.com', password: "azerty")
+
+puts "Generate 13 stuffed animals..."
+
+StuffedAnimal.create!(
+  name: 'Baloo',
+  species: 'our',
+  description: "Baloo est un personnage jovial, décontracté, qui aime s'amuser et préfère fuir les responsabilités. Véritable mentor de Mowgli, il passe la plupart de son temps à se reposer et profiter de la vie. Sa personnalité est très différente de celle du personnage imaginé par Kipling, chez qui il joue plutôt le rôle d'un instructeur assez sévère",
+  adress: 'Singapadu, Sukawati, Gianyar, Bali 80582, Indonésie',
+  rebirth_date: '26/08/1996',
+  price: 211,
+  weight: 500.0,
+  user_id: maxime.id
+)
+
+StuffedAnimal.create!(
+  name: 'Chafouin',
+  species: 'chat',
+  description: "Le Chat de Cheshire est un être magique qui a le pouvoir d'apparaître et de disparaître à volonté, s'évaporant fréquemment pour ne laisser brièvement voir que ses yeux, puis son sourire denté ou bien sa queue.Il sait aussi se démembrer, pouvant se tenir debout sur sa tête. Il sait sourire, chose normalement impossible pour un chat, et le fait en permanence.",
+  adress: 'Soğanlı, Soğanlı Mah. Mahallesi 1, Nilüfer Cd. No:260, 16160 Osmangazi/Bursa, Turquie',
+  rebirth_date: '20/02/1986',
+  price: 20,
+  weight: 10.0,
+  user_id: maxime.id
+)
+
+StuffedAnimal.create!(
+  name: 'Scooby Doo',
+  species: 'chien',
+  description: "Mascotte de l'équipe Mystère et compagnie. Son nom complet est Scoobert-Doo 16. C'est aussi le meilleur ami de Sammy. Il est très gourmand et très peureux mais si ses amis sont en danger, il arrive toujours à surmonter sa peur pour leur venir en aide. Il prononce à la fin de chaque épisode : « Scooby-Dooby-Doo ",
+  adress: 'Av. Sarmiento 2601, C1045 CABA, Argentine',
+  rebirth_date: '26/04/1986',
+  price: 33,
+  weight: 50.9,
+  user_id: maxime.id
+)
+
+StuffedAnimal.create!(
+  name: 'Franck',
+  species: 'chien',
+  description: "En ce qui concerne le passé de Frank, il ne sait rien, sauf qu'il est un étranger vivant sur Remooliano terre bien avant les événements de premier long métrage, et qui a travaillé si souvent avec MIB pour provoquer K Il le décrit comme le plus grand expert en matière de politique intergalactatteique à la disposition de l'organisation.",
+  adress: "Rue des Droits de l'Homme, 59430 Dunkerque",
+  rebirth_date: '13/04/2002',
+  price: 50,
+  weight: 11.3,
+  user_id: maxime.id
+)
+
+StuffedAnimal.create!(
+  name: 'Sobaka',
+  species: 'wolf',
+  description: 'Loup affectif qui a subi un légèr changement à cause de la radioactivité, attention! taux becquerel au-dessus de la moyenne',
+  adress: 'Kirova St, Chornobyl, Kyiv Oblast, Ukraine, 07270',
+  rebirth_date: '26/04/1986',
+  price: 150,
+  weight: 12.6,
+  user_id: maxime.id
+)
+
+StuffedAnimal.create!(
+  name: 'Rox',
+  species: 'renard',
+  description: "Lorsqu'il vit chez la veuve Tartine, Rox fait preuve d'une grande gentillesse envers ses elle et ses congénères et d'une grande gratitude envers celle qui l'a recueilli. En raison de sa fréquente solitude, il cherche à dissiper son ennui en explorant les environs et est d'un naturel curieux, joueur et insouciant, ce qui lui attire d'importants ennuis avec ses voisins",
+  adress: '2920 Zoo Dr, San Diego, CA 92101, États-Unis',
+  rebirth_date: '18/12/2007',
+  price: 97,
+  weight: 5.4,
+  user_id: maxime.id
+)
+
+StuffedAnimal.create!(
+  name: 'Robin',
+  species: 'renard',
+  description: "Malgré ses activités de voleur, Robin est très honorable et altruiste puisqu'il a pour visée de voler aux riches pour donner aux nécessiteux, comme à la famille de Veuve Lapin, offrant même des cadeaux d'anniversaire au jeune Bobby. Il risque sa vie pour secourir Tagalong vers la fin du long-métrage. Cette bravoure et cette générosité sont sources de sa popularité parmi les habitants de Nottingham.Robin a également un côté romantique, en étant profondément sous le charme de son amie d'enfance, Marianne, à qui il fait sa demande en mariage, prenant des risques pour la revoir.",
+  adress: '2920 Zoo Dr, San Diego, CA 92101, États-Unis',
+  rebirth_date: '31/12/1999',
+  price: 142,
+  weight: 1.4,
+  user_id: arthur.id
+)
+
+StuffedAnimal.create!(
+  name: 'Simba',
+  species: 'lion',
+  description: 'Simba est un jeune lionceau insouciant et turbulent qui doit succéder à son père Mufasa, le très respecté roi des hautes terres d’Afrique. Mais Simba va être poussé à l’exil par Scar, son oncle malveillant. Perdu et isolé des siens, le jeune lion va faire la connaissance de Timon et Pumbaa. Ces drôles de compagnons vont lui apprendre à voir la vie du bon côté grâce à une philosophie toute simple : « Hakuna Matata » ! L’héritier du trône va néanmoins devoir faire face à son destin et reprendre sa place dans le « cycle de la vie »',
+  adress: 'Unnamed Road, Nairobi, Kenya',
+  rebirth_date: '11/04/2008',
+  price: 72,
+  weight: 1.7,
+  user_id: arthur.id
+)
+
+StuffedAnimal.create!(
+  name: 'Bruce',
+  species: 'requin',
+  description: "Bruce n'a qu'un désir : être l'ami de toute le monde. Bruce, Enclume et Chumy sont de super potes. Bruce est le chef du gang. Ces trois requins sont membres des Mangeurs de Poissons Anonymes. Tous trois sont tourmentés par leur désir naturel de manger du poisson et par leur impopularité auprès desdits poissons et de la population de l'océan en général. Ils ont donc opté pour un style de vie végétarien, ont juré de renoncer à manger du poisson, et mènent une vie bien sous tous rapports",
+  adress: '1638 Steve Irwin Way, Beerwah QLD 4519, Australie',
+  rebirth_date: '21/09/2012',
+  price: 59,
+  weight: 400.0,
+  user_id: arthur.id
+)
+
+StuffedAnimal.create!(
+  name: 'Timon',
+  species: 'meerkat',
+  description: " Mammifère carnivore de la famille des Mangoustes (et des chiens de prairie) vivant dans le sud de l'Afrique. Il est d'un caractère futé, imprévisible et furtif. D'une énergie intarissable, entraînante et optimiste, ils ont pour devise « Hakuna matata » qui signifie « sans souci ».",
+  adress: '232 Boom St, Daspoort 319-Jr, Pretoria, 0001, Afrique du Sud',
+  rebirth_date: '09/03/2005',
+  price: 22,
+  weight: 3.3,
+  user_id: arthur.id
+)
+
+StuffedAnimal.create!(
+  name: 'Totoro',
+  species: 'chat',
+  description: 'Totoro est une créature rare et fascinante, un esprit de la forêt. Il se nourrit de glands et de noix. Il dort le jour, mais les nuits de pleine lune, il aime jouer avec des ocarinas magiques. Il peut voler et est invisible aux yeux des humains.',
+  adress: 'Yubinbango 480-1342 Préfecture d’Aichi, Nagakute Shiibara Quai Hazama B 1533-1',
+  rebirth_date: '11/02/1998',
+  price: 43,
+  weight: 666.6,
+  user_id: arthur.id
+)
+
+StuffedAnimal.create!(
+  name: 'Le Chat Potté',
+  species: 'chat',
+  description: "Individualiste et charmeur, le Chat Potté est un Don Juan, comme le suggère une scène de Shrek le troisième, attirant ses congénères du beau sexe, leur promettant l'amour éternel mais prenant la fuite dès qu'elles semblent vouloir s'attacher à lui. Il n'aime pas la compagnie encombrante et tumultueuse des enfants de l'Âne lorsque ceux-ci se jettent sur lui, alors qu'ils le prennent pour leur père.",
+  adress: 'Ocean Park, Hong Kong',
+  rebirth_date: '20/11/2007',
+  price: 67,
+  weight: 10.1,
+  user_id: arthur.id
+)
+
+StuffedAnimal.create!(
+  name: 'Scrat',
+  species: 'ecureuil',
+  description: "Scrat est un « écureuil à dents de sabre ». Son nom est un « mot-valise », contraction de 'squirrel' (écureuil en anglais) et de 'rat.Il est très connu pour être obsédé par un gland, mettant constamment sa vie en danger pour l'attraper. Le fait qu'il n'arrive jamais à ses fins et l'importance que semble mettre le destin à l'empêcher d'atteindre son but en fait presque l'allégorie de la malchance et de la persévérance.",
+  adress: 'Moscow Zoo, Bolshaya Gruzinskaya St, 1, Moscow, Russie, 123242',
+  rebirth_date: '22/07/2001',
+  price: 87,
+  weight: 50.1,
+  user_id: arthur.id
+)
+
+puts "Finished!"
