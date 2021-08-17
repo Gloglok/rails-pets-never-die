@@ -2,7 +2,7 @@
   <div class="index-cards">
     <% @stuffed_animals.each do |stuffed_animal| %>
       <%= link_to stuffed_animal_path(stuffed_animal) do%>
-        <div class="card-product mb-2">
+        <div class="card-product m-3">
         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
           <div class="card-product-infos">
             <h2><%= stuffed_animal.name %></h2>
