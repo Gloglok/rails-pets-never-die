@@ -4,7 +4,7 @@ class StuffedAnimal < ApplicationRecord
   has_many :reservations, dependent: :destroy
 
   validates :name,
-            :adress,
+            :address,
             :description,
             :price,
             :species, presence: true
