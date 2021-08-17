@@ -4,6 +4,11 @@
 .index-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
+
+  h1 {
+    font-family: $p-font;
+  }
+
   .index-map {
     background-image: url('mapbox.png');
     background-repeat: no-repeat;
@@ -13,7 +18,11 @@
   }
 }
 
-@media (max-width: 992px) {
+.card-index-img {
+  min-width: 120px;
+}
+
+@media (max-width: 1140px) {
   .index-container {
     grid-template-columns: 1fr;
   }

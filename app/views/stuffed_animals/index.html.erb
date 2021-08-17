@@ -1,9 +1,10 @@
 <div class="index-container">
   <div class="index-cards">
+    <h1 class="text-center m-5">💯 Affection <i class="text-danger">⭕% Entretien</i></h1>
     <% @stuffed_animals.each do |stuffed_animal| %>
       <%= link_to stuffed_animal_path(stuffed_animal) do%>
         <div class="card-product m-3">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <%= cl_image_tag stuffed_animal.photo.key, crop: :fill, class:"card-index-img" %>
           <div class="card-product-infos">
             <h2><%= stuffed_animal.name %></h2>
             <p class="index-card-text"><%= stuffed_animal.description[0...250]%>...</p>
