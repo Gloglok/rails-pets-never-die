@@ -1,17 +1,17 @@
-<h1>Add your stuffed animal</h1>
+<h1 class="mt-3">Ajouter votre animal</h1>
 
 
-<div class='container m-3'>
+<div class='container mx-auto'>
   <div class='row'>
     <div class='col-sm'>
     <%= simple_form_for @stuffed_animal do |f| %>
-      <%= f.input :name %>
-      <%= f.input :address %>
+      <%= f.input :name, label: "Nom"%>
+      <%= f.input :address, label: "Adresse"%>
       <%= f.input :description %>
-      <%= f.input :species %>
-      <%= f.input :price %>
-      <%= f.input :rebirth_date, as: :date, html5: true %>
-      <%= f.input :weight %>
+      <%= f.input :species, label: "Espèce" %>
+      <%= f.input :price, label: "Prix /jour" %>
+      <%= f.input :rebirth_date, as: :date, html5: true, label: "Re-naissance" %>
+      <%= f.input :weight, label: "Poids" %>
       <%= f.button :submit, class: "btn btn-primary" %>
     </div>
 
