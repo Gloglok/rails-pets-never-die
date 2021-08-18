@@ -1,9 +1,9 @@
-if Rails.env.development?
-  puts "Cleaning database..."
+# if Rails.env.development?
+puts "Cleaning database..."
 
-  StuffedAnimal.destroy_all
-  User.destroy_all
-end
+StuffedAnimal.destroy_all
+User.destroy_all
+# end
 
 puts "Generate users.."
 
