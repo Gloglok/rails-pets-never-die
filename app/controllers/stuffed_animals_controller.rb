@@ -8,6 +8,13 @@ class StuffedAnimalsController < ApplicationController
   def show
     @stuffed_animal = StuffedAnimal.find(params[:id])
     @reservation = Reservation.new
+    @reservations = Reservation.where(stuffed_animal_id: @stuffed_animal.id)
+    @reservation_dates = @reservations.map do |reservation|
+      {
+        from: reservation.start_date,
+        to: reservation.end_date
+      }
+    end
   end
 
   def new
