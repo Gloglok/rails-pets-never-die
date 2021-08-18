@@ -3,18 +3,19 @@ puts "Cleaning database..."
 
 StuffedAnimal.destroy_all
 User.destroy_all
+Reservation.destroy_all
 # end
 
 puts "Generate users.."
 
 arthur = User.new(first_name: "Arthur", last_name: "Bernard", email: 'arthur@example.com', password: "azerty")
 file = File.open(Rails.root.join('db/fixtures/users/avatar-arthur.jpg'))
-arthur.photo.attach(io: file, filename: 'avatar-arthur.jpg', content_type: 'image/jpeg')
+arthur.avatar.attach(io: file, filename: 'avatar-arthur.jpg', content_type: 'image/jpeg')
 arthur.save!
 
 maxime = User.new(first_name: "Maxime", last_name: "Haugmard", email: 'maxime@example.com', password: "azerty")
 file = File.open(Rails.root.join('db/fixtures/users/avatar-maxime.jpg'))
-arthur.photo.attach(io: file, filename: 'avatar-maxime.jpg', content_type: 'image/jpeg')
+arthur.avatar.attach(io: file, filename: 'avatar-maxime.jpg', content_type: 'image/jpeg')
 arthur.save!
 
 puts "Generate 13 stuffed animals..."
