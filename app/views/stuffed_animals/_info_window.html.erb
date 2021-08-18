@@ -1,4 +1,4 @@
 <%= cl_image_tag stuffed_animal.photo.key, crop: :fill, class:"card-window-index-img" %>
-<h2><%= stuffed_animal.name %></h2>
-<p><%= stuffed_animal.species %></p>
-<p><%= stuffed_animal.price %></p>
+<h2 class="window-index-name"><%= stuffed_animal.name %></h2>
+<p class="window-index-species"><%= stuffed_animal.species.capitalize %></p>
+<p class="window-index-price"><%= stuffed_animal.price %>€ /jour</p>

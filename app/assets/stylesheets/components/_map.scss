@@ -17,3 +17,28 @@
     width: 100%;
     min-height: 97vh;
   }
+
+.window-index-name {
+  font-family: $p-font;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+.window-index-species {
+  font-family: $p-font;
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 4px;
+
+}
+
+.window-index-price {
+  font-family: $p-font;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+  margin-bottom: 0;
+  margin-top: 4px;
+}
