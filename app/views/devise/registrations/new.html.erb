@@ -15,6 +15,7 @@
       <%= f.input :last_name,
                   required: true,
                   input_html: { autocomplete: "family-name" } %>
+      <%= f.input :avatar, required: true, as: :file %>
       <%= f.input :password,
                   required: true,
                   hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
