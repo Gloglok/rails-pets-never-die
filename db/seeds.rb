@@ -22,7 +22,7 @@ puts "Generate 13 stuffed animals..."
 
 baloo = StuffedAnimal.new(
   name: 'Baloo',
-  species: 'our',
+  species: 'ours',
   description: "Baloo est un personnage jovial, décontracté, qui aime s'amuser et préfère fuir les responsabilités. Véritable mentor de Mowgli, il passe la plupart de son temps à se reposer et profiter de la vie. Sa personnalité est très différente de celle du personnage imaginé par Kipling, chez qui il joue plutôt le rôle d'un instructeur assez sévère",
   address: 'Kabupaten Gianyar, Bali 80582',
   rebirth_date: '26/08/1996',
@@ -53,7 +53,7 @@ chafouin.save!
 scooby_doo = StuffedAnimal.new(
   name: 'Scooby Doo',
   species: 'chien',
-  description: "Mascotte de l'équipe Mystère et compagnie. Son nom complet est Scoobert-Doo 16. C'est aussi le meilleur ami de Sammy. Il est très gourmand et très peureux mais si ses amis sont en danger, il arrive toujours à surmonter sa peur pour leur venir en aide. Il prononce à la fin de chaque épisode : « Scooby-Dooby-Doo ",
+  description: "Mascotte de l'équipe Mystère et compagnie. Son nom complet est Scoobert-Doo 16. C'est aussi le meilleur ami de Sammy. Il est très gourmand et très peureux mais si ses amis sont en danger, il arrive toujours à surmonter sa peur pour leur venir en aide. Il prononce à la fin de chaque épisode : Scooby-Dooby-Doo ",
   address: 'Avenida Sarmiento, Buenos Aires, Argentine',
   rebirth_date: '26/04/1986',
   price: 33,
@@ -157,7 +157,7 @@ bruce.save!
 
 timon = StuffedAnimal.new(
   name: 'Timon',
-  species: 'meerkat',
+  species: 'suricate',
   description: " Mammifère carnivore de la famille des Mangoustes (et des chiens de prairie) vivant dans le sud de l'Afrique. Il est d'un caractère futé, imprévisible et furtif. D'une énergie intarissable, entraînante et optimiste, ils ont pour devise « Hakuna matata » qui signifie « sans souci ».",
   address: '2 Paul Kruger Street, Pretoria Central, Pretoria, 0002, Afrique du Sud',
   rebirth_date: '09/03/2005',
@@ -202,8 +202,8 @@ chat_potte.save!
 
 scrat = StuffedAnimal.new(
   name: 'Scrat',
-  species: 'ecureuil',
-  description: "Scrat est un « écureuil à dents de sabre ». Son nom est un « mot-valise », contraction de 'squirrel' (écureuil en anglais) et de 'rat.Il est très connu pour être obsédé par un gland, mettant constamment sa vie en danger pour l'attraper. Le fait qu'il n'arrive jamais à ses fins et l'importance que semble mettre le destin à l'empêcher d'atteindre son but en fait presque l'allégorie de la malchance et de la persévérance.",
+  species: 'écureuil',
+  description: "Scrat est un « écureuil à dents de sabre ». Son nom est un « mot-valise », contraction de 'squirrel' (écureuil en anglais) et de rat. Il est très connu pour être obsédé par un gland, mettant constamment sa vie en danger pour l'attraper. Le fait qu'il n'arrive jamais à ses fins et l'importance que semble mettre le destin à l'empêcher d'atteindre son but en fait presque l'allégorie de la malchance et de la persévérance.",
   address: '55 Rue du Faubourg Saint-Honoré, 75008 Paris',
   rebirth_date: '22/07/2001',
   price: 87,
