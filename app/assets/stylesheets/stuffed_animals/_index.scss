@@ -1,2 +1,33 @@
 @import "show";
 @import "new";
+
+
+.index-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  h1 {
+    font-family: $p-font;
+  }
+
+  .index-map img{
+    position: sticky;
+    top: 5px;
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+  }
+}
+
+.card-index-img {
+  min-width: 120px;
+}
+
+@media (max-width: 1140px) {
+  .index-container {
+    grid-template-columns: 1fr;
+  }
+  .index-map img{
+    margin-top: 50px;
+  }
+}

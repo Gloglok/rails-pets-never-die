@@ -7,6 +7,7 @@ class StuffedAnimalsController < ApplicationController
 
   def show
     @stuffed_animal = StuffedAnimal.find(params[:id])
+    @reservation = Reservation.new
   end
 
   def new
