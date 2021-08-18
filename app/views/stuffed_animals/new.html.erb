@@ -11,11 +11,12 @@
       <%= f.input :species %>
       <%= f.input :price %>
       <%= f.input :rebirth_date, as: :date, html5: true %>
+      <%= f.input :weight %>
       <%= f.button :submit, class: "btn btn-primary" %>
     </div>
 
     <div class='col-sm'>
-      <%= f.input :photo, as: :file %>
+      <%= f.input :photo, required: true, as: :file %>
     </div>
     <% end %>
   </div>

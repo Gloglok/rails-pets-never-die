@@ -13,4 +13,6 @@ class StuffedAnimal < ApplicationRecord
             :species, presence: true
   validates :price, numericality: true
   validates :name, uniqueness: { scope: :user, message: "Déjà pris!" }
+  validates :photo, attached: true,
+                    content_type: ['image/png', 'image/jpg', 'image/jpeg']
 end

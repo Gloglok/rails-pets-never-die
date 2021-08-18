@@ -7,8 +7,15 @@ end
 
 puts "Generate users.."
 
-arthur = User.create!(first_name: "arthur", last_name: "bernard", email: 'arthur@example.com', password: "azerty")
-maxime = User.create!(first_name: "maxime", last_name: "haugmard", email: 'maxime@example.com', password: "azerty")
+arthur = User.new(first_name: "Arthur", last_name: "Bernard", email: 'arthur@example.com', password: "azerty")
+file = File.open(Rails.root.join('db/fixtures/users/avatar-arthur.jpg'))
+arthur.photo.attach(io: file, filename: 'avatar-arthur.jpg', content_type: 'image/jpeg')
+arthur.save!
+
+maxime = User.new(first_name: "Maxime", last_name: "Haugmard", email: 'maxime@example.com', password: "azerty")
+file = File.open(Rails.root.join('db/fixtures/users/avatar-maxime.jpg'))
+arthur.photo.attach(io: file, filename: 'avatar-maxime.jpg', content_type: 'image/jpeg')
+arthur.save!
 
 puts "Generate 13 stuffed animals..."
 
