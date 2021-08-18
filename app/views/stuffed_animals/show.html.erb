@@ -9,7 +9,7 @@
           <p> <%= field.to_s.humanize %> : <%= @stuffed_animal.send(field) %></p>
         <% end %>
         <p>Weight : <%= @stuffed_animal.weight %>🏋️</p>
-        <p>Price : <%= @stuffed_animal.price %>₿</p>
+        <p>Price : <%= @stuffed_animal.price %></p>
         <p>Owner name : <%= @stuffed_animal.user.last_name.capitalize %></p>
         <p>📍 <%= @stuffed_animal.address %></p>
       </div>
