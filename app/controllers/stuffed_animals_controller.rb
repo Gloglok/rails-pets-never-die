@@ -3,6 +3,12 @@ class StuffedAnimalsController < ApplicationController
 
   def index
     @stuffed_animals = StuffedAnimal.all
+    @markers = @flats.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
   end
 
   def show
