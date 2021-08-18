@@ -7,48 +7,67 @@
 
 
 <div class="cards m-3">
-  <div class="card-category" style="">
-    <i class="fas fa-cat"></i>
-  </div>
-
-  <div class="card-category" style="">
-    <i class="fas fa-dog"></i>
-  </div>
-
-  <div class="card-category" style="">
-  </div>
-
-  <div class="card-category" style="">
-  </div>
-
-  <div class="card-category" style="">
-  </div>
-
-  <div class="card-category" style="">
-  </div>
-
-  <div class="card-category" style="">
-  </div>
-
-  <div class="card-category" style="">
-  </div>
+    <%= link_to stuffed_animals_path do %>
+      <div class="card-category pet-icon" style="">
+          <%= image_tag "pet_logo/cat-icon.png" %>
+      </div>
+    <% end %>
+    <%= link_to stuffed_animals_path do %>
+      <div class="card-category pet-icon" style="">
+        <%= image_tag "pet_logo/dog-icon.png" %>
+      </div>
+    <% end %>
+    <%= link_to stuffed_animals_path do %>
+      <div class="card-category pet-icon" style="">
+        <%= image_tag "pet_logo/fox-icon.png" %>
+      </div>
+    <% end %>
+    <%= link_to stuffed_animals_path do %>
+      <div class="card-category pet-icon" style="">
+        <%= image_tag "pet_logo/bear-icon.png" %>
+      </div>
+    <% end %>
+    <%= link_to stuffed_animals_path do %>
+      <div class="card-category pet-icon" style="">
+        <%= image_tag "pet_logo/squirrel-icon.png" %>
+      </div>
+    <% end %>
+    <%= link_to stuffed_animals_path do %>
+      <div class="card-category pet-icon" style="">
+        <%= image_tag "pet_logo/wolf-icon.png" %>
+      </div>
+    <% end %>
+    <%= link_to stuffed_animals_path do %>
+      <div class="card-category pet-icon" style="">
+        <%= image_tag "pet_logo/lion-icon.png" %>
+      </div>
+    <% end %>
+    <%= link_to stuffed_animals_path do %>
+      <div class="card-category pet-icon" style="">
+        <%= image_tag "pet_logo/fish-icon.png" %>
+      </div>
+    <% end %>
 </div>
 
-
-<div class="cards-selection m-3">
-  <div class="card-category-selection" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1450778869180-41d0601e046e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1150&q=80);">
-    <p>Classique</p>
+<%= link_to stuffed_animals_path do %>
+  <div class="cards-selection m-3">
+    <div class="card-category-selection" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1450778869180-41d0601e046e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1150&q=80);">
+      <p>Classique</p>
+    </div>
+<% end %>
+<%= link_to stuffed_animals_path do %>
+    <div class="card-category-selection" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1590668468552-d87c3a011afb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1952&q=80);">
+      <p>Savane</p>
+    </div>
+<% end %>
+<%= link_to stuffed_animals_path do %>
+    <div class="card-category-selection" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1580140404772-decde5a9cc9f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80);">
+      <p>Aquatique</p>
+    </div>
+<% end %>
+<%= link_to stuffed_animals_path do %>
+    <div class="card-category-selection" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1511497584788-876760111969?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80);">
+      <p>Forêt</p>
+    </div>
   </div>
-
-  <div class="card-category-selection" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1590668468552-d87c3a011afb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1952&q=80);">
-    <p>Savane</p>
-  </div>
-
-  <div class="card-category-selection" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1580140404772-decde5a9cc9f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80);">
-    <p>Aquatique</p>
-  </div>
-
-  <div class="card-category-selection" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1511497584788-876760111969?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80);">
-    <p>Forêt</p>
-  </div>
-</div>
+<% end %>
