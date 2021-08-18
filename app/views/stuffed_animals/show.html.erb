@@ -1,21 +1,35 @@
-<div class="container mt-5">
-  <h1 class="mb-3"><%= @stuffed_animal.name %></h1>
+<div class="show-container mt-3">
+  <div class="d-flex">
 
-  <div>
     <div class="card-product card-show">
       <%= cl_image_tag @stuffed_animal.photo.key, crop: :fill %>
       <div class="card-product-infos">
-        <p>🐾 <%= @stuffed_animal.species %></p>
+        <p class="show-money-text">💰 <span id="price-per-day"><strong><%= @stuffed_animal.price %></strong></span>€ /jour</p>
+        <h2 class="pb-3"><%= @stuffed_animal.name %></h2>
+        <p>🐾 <%= @stuffed_animal.species.capitalize %></p>
         <p>📅 <%= @stuffed_animal.rebirth_date %></p>
         <p>🏋️ <%= @stuffed_animal.weight %>kg</p>
-        <p >💸 <span id="price-per-day"><%= @stuffed_animal.price %></span>€ / jour</p>
         <p>🙍 <%= @stuffed_animal.user.last_name.capitalize %></p>
         <p>📍 <%= @stuffed_animal.address %></p>
       </div>
     </div>
+
+    <div class="form-wrapper ml-2 pl-4" style="width: 360px; margin: 0 auto;">
+      <div id="reservation-form-div">
+        <%= simple_form_for([@stuffed_animal, @reservation]) do |f| %>
+          <%= f.input :start_date, as: :string, required: false, label: false, input_html: { id: "range_start", class: "d-none" }  %>
+          <%= f.input :end_date, label: false, as: :string, required: false, input_html: { id: "range_end", class: "d-none" } %>
+          <div class="mt-3 mr-4"><%= f.button :submit, "Réserver", class: "btn btn-primary btn-block"%></div>
+        <% end %>
+        <div class="d-block">
+          <p class="mt-3">Réservation pour <strong><span id="total-days">0</span> jours</strong></p>
+          <p>Prix total : <strong><span id="total-price">0</span> €</strong></p>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <p class="mb-0 mt-5 pl-3">Un peu d'histoire sur <strong><%= @stuffed_animal.name %></strong></p>
+  <p class="mb-0 pl-3">Un peu d'histoire sur <strong><%= @stuffed_animal.name %></strong></p>
   <div class="card-product card-show card-show-description mt-0 mb-5">
     <p>❝<%= @stuffed_animal.description %>❝</p>
   </div>
@@ -25,24 +39,7 @@
     <%# map %>
   </div>
 
-  <div class="container">
-    <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
-      <h2>Choisir son animal</h2>
-
-      <div id="reservation-form-div" data-reservations="<%= @reservations_dates.to_json %>">
-        <%= simple_form_for([@stuffed_animal, @reservation]) do |f| %>
-          <%= f.input :start_date, as: :string, required: false, label: 'Début de la réservation', input_html: { id: "range_start" }  %>
-          <%= f.input :end_date, as: :string, required: false, label: 'Fin de la réservation', input_html: { id: "range_end" } %>
-          <%= f.button :submit, "Réserver", class: "btn btn-primary" %>
-        <% end %>
-        <p class="mt-3">Réservation pour <span id="total-days">0</span> jours</p>
-        <p>Prix total : <span id="total-price">0</span> € </p>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="btn btn btn-secondary my-5">
+  <div class="btn btn btn-secondary mb-5">
     <%= link_to "Retour", stuffed_animals_path %>
   </div>
 </div>
