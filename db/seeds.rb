@@ -15,8 +15,8 @@ arthur.save!
 
 maxime = User.new(first_name: "Maxime", last_name: "Haugmard", email: 'maxime@example.com', password: "azerty")
 file = File.open(Rails.root.join('db/fixtures/users/avatar-maxime.jpg'))
-arthur.avatar.attach(io: file, filename: 'avatar-maxime.jpg', content_type: 'image/jpeg')
-arthur.save!
+maxime.avatar.attach(io: file, filename: 'avatar-maxime.jpg', content_type: 'image/jpeg')
+maxime.save!
 
 puts "Generate 13 stuffed animals..."
 
