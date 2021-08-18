@@ -4,8 +4,8 @@
     <div class="card-product card-show">
       <%= cl_image_tag @stuffed_animal.photo.key, crop: :fill %>
       <div class="card-product-infos">
-        <p class="show-money-text">💰 <span id="price-per-day"><strong><%= @stuffed_animal.price %></strong></span>€ /jour</p>
-        <h2 class="pb-3"><%= @stuffed_animal.name %></h2>
+        <p class="show-money-text">💸 <span id="price-per-day"><strong><%= @stuffed_animal.price %></strong></span>€ /jour</p>
+        <h2 class="pb-2"><%= @stuffed_animal.name %></h2>
         <p>🐾 <%= @stuffed_animal.species.capitalize %></p>
         <p>📅 <%= @stuffed_animal.rebirth_date %></p>
         <p>🏋️ <%= @stuffed_animal.weight %>kg</p>
@@ -39,7 +39,7 @@
     <%# map %>
   </div>
 
-  <div class="btn btn btn-secondary mb-5">
+  <div class="btn btn btn-secondary mb-3">
     <%= link_to "Retour", stuffed_animals_path %>
   </div>
 </div>
