@@ -64,7 +64,9 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-
+.pet-icon img {
+  width: 40px;
+}
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {

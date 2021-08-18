@@ -2,7 +2,7 @@
   overflow: hidden;
   height: 120px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   display: flex;
   align-items: center;
 }
@@ -14,7 +14,7 @@
 }
 
 .card-product h2 {
-  font-size: 16px;
+  font-size: 24px;
   font-weight: bold;
   margin: 0;
 }
@@ -29,12 +29,14 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+  min-width: 460px;
 }
 
 a {
-  color: black;
+  color: rgb(92, 92, 92);
   text-decoration: none;
   &:hover {
     text-decoration: none;
+    color: black;
   }
 }

@@ -11,4 +11,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :first_name,
             :last_name, presence: true
+  validates :avatar, attached: true,
+                     content_type: ['image/png', 'image/jpg', 'image/jpeg']
 end

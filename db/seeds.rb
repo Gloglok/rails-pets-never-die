@@ -1,14 +1,22 @@
-if Rails.env.development?
-  puts "Cleaning database..."
+# if Rails.env.development?
+puts "Cleaning database..."
 
-  StuffedAnimal.destroy_all
-  User.destroy_all
-end
+StuffedAnimal.destroy_all
+User.destroy_all
+Reservation.destroy_all
+# end
 
 puts "Generate users.."
 
-arthur = User.create!(first_name: "arthur", last_name: "bernard", email: 'arthur@example.com', password: "azerty")
-maxime = User.create!(first_name: "maxime", last_name: "haugmard", email: 'maxime@example.com', password: "azerty")
+arthur = User.new(first_name: "Arthur", last_name: "Bernard", email: 'arthur@example.com', password: "azerty")
+file = File.open(Rails.root.join('db/fixtures/users/avatar-arthur.jpg'))
+arthur.avatar.attach(io: file, filename: 'avatar-arthur.jpg', content_type: 'image/jpeg')
+arthur.save!
+
+maxime = User.new(first_name: "Maxime", last_name: "Haugmard", email: 'maxime@example.com', password: "azerty")
+file = File.open(Rails.root.join('db/fixtures/users/avatar-maxime.jpg'))
+maxime.avatar.attach(io: file, filename: 'avatar-maxime.jpg', content_type: 'image/jpeg')
+maxime.save!
 
 puts "Generate 13 stuffed animals..."
 
@@ -16,7 +24,7 @@ baloo = StuffedAnimal.new(
   name: 'Baloo',
   species: 'our',
   description: "Baloo est un personnage jovial, décontracté, qui aime s'amuser et préfère fuir les responsabilités. Véritable mentor de Mowgli, il passe la plupart de son temps à se reposer et profiter de la vie. Sa personnalité est très différente de celle du personnage imaginé par Kipling, chez qui il joue plutôt le rôle d'un instructeur assez sévère",
-  address: 'Singapadu, Sukawati, Gianyar, Bali 80582, Indonésie',
+  address: 'Kabupaten Gianyar, Bali 80582',
   rebirth_date: '26/08/1996',
   price: 211,
   weight: 500.0,
@@ -31,7 +39,7 @@ chafouin = StuffedAnimal.new(
   name: 'Chafouin',
   species: 'chat',
   description: "Le Chat de Cheshire est un être magique qui a le pouvoir d'apparaître et de disparaître à volonté, s'évaporant fréquemment pour ne laisser brièvement voir que ses yeux, puis son sourire denté ou bien sa queue.Il sait aussi se démembrer, pouvant se tenir debout sur sa tête. Il sait sourire, chose normalement impossible pour un chat, et le fait en permanence.",
-  address: 'Soğanlı, Soğanlı Mah. Mahallesi 1, Nilüfer Cd. No:260, 16160 Osmangazi/Bursa, Turquie',
+  address: '2 Nilüfer Cd. No:3, 16160 Bursa, Turquie',
   rebirth_date: '20/02/1986',
   price: 20,
   weight: 10.0,
@@ -46,7 +54,7 @@ scooby_doo = StuffedAnimal.new(
   name: 'Scooby Doo',
   species: 'chien',
   description: "Mascotte de l'équipe Mystère et compagnie. Son nom complet est Scoobert-Doo 16. C'est aussi le meilleur ami de Sammy. Il est très gourmand et très peureux mais si ses amis sont en danger, il arrive toujours à surmonter sa peur pour leur venir en aide. Il prononce à la fin de chaque épisode : « Scooby-Dooby-Doo ",
-  address: 'Av. Sarmiento 2601, C1045 CABA, Argentine',
+  address: 'Avenida Sarmiento, Buenos Aires, Argentine',
   rebirth_date: '26/04/1986',
   price: 33,
   weight: 50.9,
@@ -76,7 +84,7 @@ sobaka = StuffedAnimal.new(
   name: 'Sobaka',
   species: 'wolf',
   description: 'Loup affectif qui a subi un légèr changement à cause de la radioactivité, attention! taux becquerel au-dessus de la moyenne',
-  address: 'Kirova St, Chornobyl, Kyiv Oblast, Ukraine, 07270',
+  address: 'Chornobyl, Kyiv Oblast, Ukraine',
   rebirth_date: '26/04/1986',
   price: 150,
   weight: 12.6,
@@ -91,7 +99,7 @@ rox = StuffedAnimal.new(
   name: 'Rox',
   species: 'renard',
   description: "Lorsqu'il vit chez la veuve Tartine, Rox fait preuve d'une grande gentillesse envers ses elle et ses congénères et d'une grande gratitude envers celle qui l'a recueilli. En raison de sa fréquente solitude, il cherche à dissiper son ennui en explorant les environs et est d'un naturel curieux, joueur et insouciant, ce qui lui attire d'importants ennuis avec ses voisins",
-  address: '2920 Zoo Dr, San Diego, CA 92101, États-Unis',
+  address: '725 5th Avenue, New York, NY 10022, États-Unis',
   rebirth_date: '18/12/2007',
   price: 97,
   weight: 5.4,
@@ -151,7 +159,7 @@ timon = StuffedAnimal.new(
   name: 'Timon',
   species: 'meerkat',
   description: " Mammifère carnivore de la famille des Mangoustes (et des chiens de prairie) vivant dans le sud de l'Afrique. Il est d'un caractère futé, imprévisible et furtif. D'une énergie intarissable, entraînante et optimiste, ils ont pour devise « Hakuna matata » qui signifie « sans souci ».",
-  address: '232 Boom St, Daspoort 319-Jr, Pretoria, 0001, Afrique du Sud',
+  address: '2 Paul Kruger Street, Pretoria Central, Pretoria, 0002, Afrique du Sud',
   rebirth_date: '09/03/2005',
   price: 22,
   weight: 3.3,
@@ -166,7 +174,7 @@ totoro = StuffedAnimal.new(
   name: 'Totoro',
   species: 'chat',
   description: 'Totoro est une créature rare et fascinante, un esprit de la forêt. Il se nourrit de glands et de noix. Il dort le jour, mais les nuits de pleine lune, il aime jouer avec des ocarinas magiques. Il peut voler et est invisible aux yeux des humains.',
-  address: 'Yubinbango 480-1342 Préfecture d’Aichi, Nagakute Shiibara Quai Hazama B 1533-1',
+  address: "Nagakute, Préfecture d'Aichi 480-1342 Japon",
   rebirth_date: '11/02/1998',
   price: 43,
   weight: 666.6,
@@ -196,7 +204,7 @@ scrat = StuffedAnimal.new(
   name: 'Scrat',
   species: 'ecureuil',
   description: "Scrat est un « écureuil à dents de sabre ». Son nom est un « mot-valise », contraction de 'squirrel' (écureuil en anglais) et de 'rat.Il est très connu pour être obsédé par un gland, mettant constamment sa vie en danger pour l'attraper. Le fait qu'il n'arrive jamais à ses fins et l'importance que semble mettre le destin à l'empêcher d'atteindre son but en fait presque l'allégorie de la malchance et de la persévérance.",
-  address: 'Moscow Zoo, Bolshaya Gruzinskaya St, 1, Moscow, Russie, 123242',
+  address: '55 Rue du Faubourg Saint-Honoré, 75008 Paris',
   rebirth_date: '22/07/2001',
   price: 87,
   weight: 50.1,

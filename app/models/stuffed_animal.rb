@@ -3,6 +3,9 @@ class StuffedAnimal < ApplicationRecord
   has_one_attached :photo
   has_many :reservations, dependent: :destroy
 
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
   validates :name,
             :address,
             :description,
@@ -10,4 +13,6 @@ class StuffedAnimal < ApplicationRecord
             :species, presence: true
   validates :price, numericality: true
   validates :name, uniqueness: { scope: :user, message: "Déjà pris!" }
+  validates :photo, attached: true,
+                    content_type: ['image/png', 'image/jpg', 'image/jpeg']
 end
