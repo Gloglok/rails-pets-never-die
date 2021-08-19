@@ -1,16 +1,17 @@
 <div class="index-container">
-  <div class="index-cards">
-    <h1 class="text-center m-5">💯 Affection <i class="text-danger">⭕% Entretien</i></h1>
+  <div class="index-cards mx-5">
+    <h1 class="text-center m-5">💯% Affection <i class="text-danger">⭕% Entretien</i></h1>
     <% @stuffed_animals.each do |stuffed_animal| %>
       <%= link_to stuffed_animal_path(stuffed_animal) do%>
-        <div class="card-product m-3 rounded">
+        <div class="card-product rounded" style="min-width: 460px">
         <%= cl_image_tag stuffed_animal.photo.key, crop: :fill, class:"card-index-img rounded" %>
-          <div class="card-product-infos">
-            <div class='d-flex justify-content-between align-items-center'>
+          <div class="card-product-infos" style="width: 100%">
+            <div class='d-flex justify-content-between align-items-start'>
               <h2><%= stuffed_animal.name %></h2>
-              <p class="index-card-text mt-0"><span class='price-index-card'><%= stuffed_animal.price%> €</span> par jour</p>
+              <p class="index-card-text mt-0"><span class='price-index-card'><%= stuffed_animal.price%> €</span><br><span class='d-flex justify-content-end'>/jour</span></p>
             </div>
-            <p class="index-card-text mt-4"><%= stuffed_animal.address%></p>
+            <div class="raiting">⭐ <%= stuffed_animal.rating %> (<%= stuffed_animal.vote.to_i %> votes)</div>
+            <p class="index-card-text mt-3 mb-1">📍<%= stuffed_animal.address%></p>
           </div>
         </div>
       <% end %>
@@ -19,7 +20,7 @@
 
 
   <div id="map"
-    style="width: 100%; height: 600px; rounded"
+    style="width: 97%; height: 600px; rounded"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>

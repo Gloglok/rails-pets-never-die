@@ -4,7 +4,8 @@
 
 .index-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  grid-template-columns: 1fr 45%;
 
   h1 {
     font-family: $p-font;
@@ -12,21 +13,14 @@
 }
 
 .price-index-card {
-  font-size: 24px;
+  font-size: 36px;
   font-weight: bold;
   font-family: $p-font;
   margin-top: 0px;
 }
 
-.card-index-img {
-  min-width: 120px;
-}
-
 @media (max-width: 1140px) {
   .index-container {
     grid-template-columns: 1fr;
-  }
-  .index-map img{
-    margin-top: 50px;
   }
 }
