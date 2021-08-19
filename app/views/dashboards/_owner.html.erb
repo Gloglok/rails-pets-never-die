@@ -1,0 +1,39 @@
+<div class="tab-pane fade" id="pills-owner" role="tabpanel" aria-labelledby="pills-owner-tab">
+      <% @owner_reservations %>
+      <div class="index-container">
+        <div class="index-cards">
+          <% @reservations.select { |owner| owner.stuffed_animal.user_id == current_user.id }
+                          .sort_by {|obj| obj.status }
+                          .reverse
+                          .each do |reservation| %>
+            <%= link_to stuffed_animal_path(reservation.stuffed_animal) do%>
+              <div class="card-product mb-2 dashboard-card">
+              <%= cl_image_tag reservation.stuffed_animal.photo.key, crop: :fill, class:"card-index-img" %>
+                <div class="card-product-infos dashboard-card-info">
+                    <h2 class="d-inline"><%= reservation.stuffed_animal.name %></h2>
+                    <div class="d-block float-right text-center">
+                      <% case reservation.status %>
+                        <% when "Attente" %>
+                        <p class="btn btn-secondary">En <%= reservation.status %></p>
+                        <% when "Accepté" %>
+                        <p class="btn btn-success"><%= reservation.status %></p>
+                        <% when "Refusé" %>
+                        <p class="btn btn-danger"><%= reservation.status %></p>
+                      <% end %>
+                      <h5 class="mt-3"><strong><%= reservation.total_price %> €</strong></h5>
+                    </div>
+                    <p class="index-card-text pt-0">📅 <%= reservation.start_date.strftime("%d-%m-%Y") %>  >  <%= reservation.end_date.strftime("%d-%m-%Y") %></p>
+
+                 <!-- button accept et decline ici -->
+                  <div class="d-block button-dashboard">
+                    <%= link_to 'Accepter', accept_reservation_path(reservation), method: :patch, class: 'btn btn-success', data: { confirm: 'Voulez-vous accepter cette réservation?' } %>
+                    <%= link_to 'Refuser', decline_reservation_path(reservation), method: :patch, class: 'btn btn-danger', data: { confirm: 'Êtes-vous sûre de vouloir refuser cette réservation?' } %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
