@@ -1,6 +1,11 @@
+.show-container {
+  margin-left: 30px;
+}
+
 .card-show {
-  height: 400px;
+  height: 435px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  width: 74.2%;
 }
 
 .card-show img {
@@ -19,4 +24,12 @@
 .card-show-description {
   height: 100%;
   padding: 16px;
+  max-width: 74.2%;
+}
+
+p.show-money-text {
+  font-size: 40px;
+  margin-bottom: 30px;
+  color: #0E0000;
+  opacity: .8;
 }

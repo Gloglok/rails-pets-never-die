@@ -29,6 +29,8 @@ baloo = StuffedAnimal.new(
   price: 211,
   weight: 500.0,
   user_id: maxime.id
+  vote: (100..1000).sample
+  raiting: (1..5).sample
 )
 
 file = File.open(Rails.root.join('db/fixtures/stuffed_animals/bear.jpg'))

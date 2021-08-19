@@ -17,6 +17,7 @@ class ReservationsController < ApplicationController
     @reservation.status = 'Pending'
     @reservation.stuffed_animal = @stuffed_animal
     @reservation.user = current_user
+    @reservation.total_price = @reservation.total_days * @stuffed_animal.price
     if @reservation.save
       redirect_to dashboard_path
     else
@@ -35,7 +36,6 @@ class ReservationsController < ApplicationController
   end
 
   def reservation_params
-    params.require(:reservation).permit(:start_date, :end_date,
-                                        :status, :total_price)
+    params.require(:reservation).permit(:start_date, :end_date)
   end
 end
