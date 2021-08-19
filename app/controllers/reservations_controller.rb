@@ -3,11 +3,13 @@ class ReservationsController < ApplicationController
   before_action :find_reservation, only: %i[accept decline]
 
   def accept
-    @reservation.status = 'Accepted'
+    @reservation.update_attribute(:status, 'Accepted')
+    redirect_to :dashboard
   end
 
   def decline
-    @reservation.status = 'Declined'
+    @reservation.update_attribute(:status, 'Declined')
+    redirect_to :dashboard
   end
 
   def create
