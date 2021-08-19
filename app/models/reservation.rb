@@ -6,4 +6,8 @@ class Reservation < ApplicationRecord
   validates :start_date,
             :end_date, presence: true
   validates :status, inclusion: { in: AUTHORIZED_STATUS }
+
+  def total_days
+    (end_date - start_date).to_i
+  end
 end

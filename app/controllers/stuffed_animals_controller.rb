@@ -1,5 +1,5 @@
 class StuffedAnimalsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
     @stuffed_animals = StuffedAnimal.all
@@ -16,7 +16,7 @@ class StuffedAnimalsController < ApplicationController
     @stuffed_animal = StuffedAnimal.find(params[:id])
     @reservation = Reservation.new
     @reservations = Reservation.where(stuffed_animal_id: @stuffed_animal.id)
-    @reservation_dates = @reservations.map do |reservation|
+    @reservations_dates = @reservations.map do |reservation|
       {
         from: reservation.start_date,
         to: reservation.end_date
