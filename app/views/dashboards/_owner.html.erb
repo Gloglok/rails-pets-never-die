@@ -25,10 +25,12 @@
                 <p class="index-card-text pt-0">📅 <%= reservation.start_date.strftime("%d-%m-%Y") %>  >  <%= reservation.end_date.strftime("%d-%m-%Y") %></p>
 
               <!-- button accept et decline ici -->
-              <div class="d-block button-dashboard">
-                <%= link_to 'Accepter', accept_reservation_path(reservation), method: :patch, class: 'btn btn-success', data: { confirm: 'Voulez-vous accepter cette réservation?' } %>
-                <%= link_to 'Refuser', decline_reservation_path(reservation), method: :patch, class: 'btn btn-danger', data: { confirm: 'Êtes-vous sûre de vouloir refuser cette réservation?' } %>
-              </div>
+              <%if reservation.status == 'Attente' %>
+                <div class="d-block button-dashboard">
+                  <%= link_to 'Accepter', accept_reservation_path(reservation), method: :patch, class: 'btn btn-success', data: { confirm: 'Voulez-vous accepter cette réservation?' } %>
+                  <%= link_to 'Refuser', decline_reservation_path(reservation), method: :patch, class: 'btn btn-danger', data: { confirm: 'Êtes-vous sûre de vouloir refuser cette réservation?' } %>
+                </div>
+              <% end %>
             </div>
           </div>
         <% end %>
