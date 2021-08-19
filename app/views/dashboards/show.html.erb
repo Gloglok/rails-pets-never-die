@@ -8,8 +8,8 @@
       <a class="nav-link" id="pills-owner-tab" data-toggle="pill" href="#pills-owner" role="tab" aria-controls="pills-owner" aria-selected="false">En tant que propriétaire</a>
     </li>
   </ul>
-
-  <%= render partial: "user"%>
-
-  <%= render partial: "owner"%>
+  <div class="tab-content" id="pills-tabContent">
+    <%= render partial: "user"%>
+    <%= render partial: "owner"%>
+  </div>
 </div>
