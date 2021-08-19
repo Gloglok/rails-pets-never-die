@@ -10,7 +10,7 @@
               <h2><%= stuffed_animal.name %></h2>
               <p class="index-card-text mt-0"><span class='price-index-card'><%= stuffed_animal.price%> €</span><br><span class='d-flex justify-content-end'>/jour</span></p>
             </div>
-            <p class="raiting">⭐ 4,79 (156 votes)</p>
+            <div class="raiting">⭐ <%= stuffed_animal.rating %> (<%= stuffed_animal.vote.to_i %> votes)</div>
             <p class="index-card-text mt-3 mb-1">📍<%= stuffed_animal.address%></p>
           </div>
         </div>

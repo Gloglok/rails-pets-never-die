@@ -28,9 +28,9 @@ baloo = StuffedAnimal.new(
   rebirth_date: '26/08/1996',
   price: 211,
   weight: 500.0,
-  user_id: maxime.id
-  vote: (100..1000).sample
-  raiting: (1..5).sample
+  user_id: maxime.id,
+  vote: (100..1000).to_a.sample,
+  rating: rand(1.0..5.0).round(2)
 )
 
 file = File.open(Rails.root.join('db/fixtures/stuffed_animals/bear.jpg'))
@@ -45,7 +45,9 @@ chafouin = StuffedAnimal.new(
   rebirth_date: '20/02/1986',
   price: 20,
   weight: 10.0,
-  user_id: maxime.id
+  user_id: maxime.id,
+  vote: (100..1000).to_a.sample,
+  rating: rand(1.0..5.0).round(2)
 )
 
 file = File.open(Rails.root.join('db/fixtures/stuffed_animals/cat.jpg'))
@@ -60,7 +62,9 @@ scooby_doo = StuffedAnimal.new(
   rebirth_date: '26/04/1986',
   price: 33,
   weight: 50.9,
-  user_id: maxime.id
+  user_id: maxime.id,
+  vote: (100..1000).to_a.sample,
+  rating: rand(1.0..5.0).round(2)
 )
 
 file = File.open(Rails.root.join('db/fixtures/stuffed_animals/dog.jpg'))
@@ -75,7 +79,9 @@ franck = StuffedAnimal.new(
   rebirth_date: '13/04/2002',
   price: 50,
   weight: 11.3,
-  user_id: maxime.id
+  user_id: maxime.id,
+  vote: (100..1000).to_a.sample,
+  rating: rand(1.0..5.0).round(2)
 )
 
 file = File.open(Rails.root.join('db/fixtures/stuffed_animals/dog2.jpg'))
@@ -90,7 +96,9 @@ sobaka = StuffedAnimal.new(
   rebirth_date: '26/04/1986',
   price: 150,
   weight: 12.6,
-  user_id: maxime.id
+  user_id: maxime.id,
+  vote: (100..1000).to_a.sample,
+  rating: rand(1.0..5.0).round(2)
 )
 
 file = File.open(Rails.root.join('db/fixtures/stuffed_animals/dog3.jpg'))
@@ -105,7 +113,9 @@ rox = StuffedAnimal.new(
   rebirth_date: '18/12/2007',
   price: 97,
   weight: 5.4,
-  user_id: maxime.id
+  user_id: maxime.id,
+  vote: (100..1000).to_a.sample,
+  rating: rand(1.0..5.0).round(2)
 )
 
 file = File.open(Rails.root.join('db/fixtures/stuffed_animals/fox.jpg'))
@@ -120,7 +130,9 @@ robin = StuffedAnimal.new(
   rebirth_date: '31/12/1999',
   price: 142,
   weight: 1.4,
-  user_id: arthur.id
+  user_id: arthur.id,
+  vote: (100..1000).to_a.sample,
+  rating: rand(1.0..5.0).round(2)
 )
 
 file = File.open(Rails.root.join('db/fixtures/stuffed_animals/fox2.jpg'))
@@ -135,7 +147,9 @@ simba = StuffedAnimal.new(
   rebirth_date: '11/04/2008',
   price: 72,
   weight: 1.7,
-  user_id: arthur.id
+  user_id: arthur.id,
+  vote: (100..1000).to_a.sample,
+  rating: rand(1.0..5.0).round(2)
 )
 
 file = File.open(Rails.root.join('db/fixtures/stuffed_animals/lion.jpg'))
@@ -150,7 +164,9 @@ bruce = StuffedAnimal.new(
   rebirth_date: '21/09/2012',
   price: 59,
   weight: 400.0,
-  user_id: arthur.id
+  user_id: arthur.id,
+  vote: (100..1000).to_a.sample,
+  rating: rand(1.0..5.0).round(2)
 )
 
 file = File.open(Rails.root.join('db/fixtures/stuffed_animals/shark.jpg'))
@@ -165,7 +181,9 @@ timon = StuffedAnimal.new(
   rebirth_date: '09/03/2005',
   price: 22,
   weight: 3.3,
-  user_id: arthur.id
+  user_id: arthur.id,
+  vote: (100..1000).to_a.sample,
+  rating: rand(1.0..5.0).round(2)
 )
 
 file = File.open(Rails.root.join('db/fixtures/stuffed_animals/belette.jpg'))
@@ -180,7 +198,9 @@ totoro = StuffedAnimal.new(
   rebirth_date: '11/02/1998',
   price: 43,
   weight: 666.6,
-  user_id: arthur.id
+  user_id: arthur.id,
+  vote: (100..1000).to_a.sample,
+  rating: rand(1.0..5.0).round(2)
 )
 
 file = File.open(Rails.root.join('db/fixtures/stuffed_animals/cat2.jpg'))
@@ -195,7 +215,9 @@ chat_potte = StuffedAnimal.new(
   rebirth_date: '20/11/2007',
   price: 67,
   weight: 10.1,
-  user_id: arthur.id
+  user_id: arthur.id,
+  vote: (100..1000).to_a.sample,
+  rating: rand(1.0..5.0).round(2)
 )
 
 file = File.open(Rails.root.join('db/fixtures/stuffed_animals/cat3.jpg'))
@@ -210,7 +232,9 @@ scrat = StuffedAnimal.new(
   rebirth_date: '22/07/2001',
   price: 87,
   weight: 50.1,
-  user_id: arthur.id
+  user_id: arthur.id,
+  vote: (100..1000).to_a.sample,
+  rating: rand(1.0..5.0).round(2)
 )
 
 file = File.open(Rails.root.join('db/fixtures/stuffed_animals/wolf.jpg'))

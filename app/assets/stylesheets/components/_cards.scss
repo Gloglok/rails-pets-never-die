@@ -1,6 +1,6 @@
 .card-product {
   overflow: hidden;
-  height: 155px;
+  height: 160px;
   background: white;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   display: flex;
@@ -43,7 +43,9 @@
   opacity: .5;
   padding-top: 12px;
   display: inline-block;
+  font-size: 20px;
 }
+
 
 a {
   color: rgb(92, 92, 92);
