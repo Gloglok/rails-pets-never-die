@@ -1,0 +1,19 @@
+.dashboard-card {
+  min-width: 460px;
+  .card-index-img {
+    min-height: 120px;
+  }
+  .index-card-text {
+    font-size: 16px;
+    padding-top: 20px;
+  }
+}
+
+.dashboard-card-info{
+  width: 100%;
+}
+
+.button-dashboard a {
+  margin-top: 10px;
+  font-size: 12px;
+}

@@ -1,72 +1,15 @@
 <div class="container mt-5">
-
   <h1>Tableau de bord</h1>
-  <p>Hello <%= @user.first_name %></p>
   <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
     <li class="nav-item">
-      <a class="nav-link active" id="pills-user-tab" data-toggle="pill" href="#pills-user" role="tab" aria-controls="pills-user" aria-selected="false">As a User</a>
+      <a class="nav-link active" id="pills-user-tab" data-toggle="pill" href="#pills-user" role="tab" aria-controls="pills-user" aria-selected="true">En tant qu'utilisateur</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="pills-owner-tab" data-toggle="pill" href="#pills-owner" role="tab" aria-controls="pills-owner" aria-selected="false">As an Owner</a>
+      <a class="nav-link" id="pills-owner-tab" data-toggle="pill" href="#pills-owner" role="tab" aria-controls="pills-owner" aria-selected="false">En tant que propriétaire</a>
     </li>
   </ul>
-
   <div class="tab-content" id="pills-tabContent">
-    <div class="tab-pane fade" id="pills-user" role="tabpanel" aria-labelledby="pills-user-tab">
-      <% @reservations %>
-      <div class="index-container">
-          <div class="index-cards">
-            <% @reservations.sort_by {|obj| obj.status }.each do |reservation| %>
-              <%= link_to stuffed_animal_path(reservation.stuffed_animal) do%>
-                <div class="card-product mb-2">
-                <%= cl_image_tag reservation.stuffed_animal.photo.key, crop: :fill, class:"card-index-img" %>
-                  <div class="card-product-infos">
-                    <h2 class="d-inline"><%= reservation.stuffed_animal.name %></h2>
-                    <% case reservation.status %>
-                      <% when "Pending" %>
-                      <p class="d-inline float-right btn btn-secondary"><%= reservation.status %></p>
-                      <% when "Accepted" %>
-                      <p class="d-inline float-right btn btn-success"><%= reservation.status %></p>
-                      <% when "Declined" %>
-                      <p class="d-inline float-right btn btn-danger"><%= reservation.status %></p>
-                    <% end %>
-                    <p class="index-card-text">From: <%= reservation.start_date.strftime("%d-%m-%Y") %></p>
-                    <p class="index-card-text">To: <%= reservation.end_date.strftime("%d-%m-%Y") %></p>
-                  </div>
-                </div>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
-    </div>
-
-    <div class="tab-pane fade" id="pills-owner" role="tabpanel" aria-labelledby="pills-owner-tab">
-      <% @owner_reservations %>
-      <div class="index-container">
-        <div class="index-cards">
-          <% @reservations.select { |owner| owner.stuffed_animal.user_id == current_user.id }.each do |reservation| %>
-            <%= link_to stuffed_animal_path(reservation.stuffed_animal) do%>
-              <div class="card-product mb-2">
-              <%= cl_image_tag reservation.stuffed_animal.photo.key, crop: :fill, class:"card-index-img" %>
-                <div class="card-product-infos">
-                  <h2 class="d-inline"><%= reservation.stuffed_animal.name %></h2>
-                  <% case reservation.status %>
-                    <% when "Pending" %>
-                    <p class="d-inline float-right btn btn-secondary"><%= reservation.status %></p>
-                    <% when "Accepted" %>
-                    <p class="d-inline float-right btn btn-success"><%= reservation.status %></p>
-                    <% when "Declined" %>
-                    <p class="d-inline float-right btn btn-danger"><%= reservation.status %></p>
-                  <% end %>
-                 <!-- button accept et decline ici -->
-                 <%= link_to 'Accept', accept_reservation_path(reservation), method: :patch, class: 'btn btn-success', data: { confirm: 'You will accept the request. Proceed?' } %>
-                 <%= link_to 'Decline', decline_reservation_path(reservation), method: :patch, class: 'btn btn-danger', data: { confirm: 'You will decline the request. Proceed?' } %>
-                </div>
-              </div>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
-    </div>
+    <%= render partial: "user"%>
+    <%= render partial: "owner"%>
   </div>
 </div>
