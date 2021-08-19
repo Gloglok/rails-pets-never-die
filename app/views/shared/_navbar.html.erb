@@ -3,12 +3,21 @@
     <%= image_tag "logo.png" %>
     <% end %>
 
-<form class="form-inline d-flex p-1">
-      <input class="form-control" type="search" placeholder="Espèce" aria-label="Search" style="width: 120px;">
-      <input class="form-control" type="search" placeholder="Date" aria-label="Search" style="width: 120px;">
-      <input class="form-control" type="search" placeholder="Ville" aria-label="Search" style="width: 120px;">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
-</form>
+<div class="form-inline d-flex p-1">
+  <%= form_tag stuffed_animals_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Espèce"
+    %>
+    <%= text_field_tag :city,
+      params[:city],
+      class: "form-control",
+      placeholder: "Ville"
+    %>
+    <%= submit_tag "Rechercher", class: "btn btn-outline-success my-2 my-sm-0" %>
+  <% end %>
+</div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>

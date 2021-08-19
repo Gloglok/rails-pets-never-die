@@ -2,13 +2,26 @@ class StuffedAnimalsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @stuffed_animals = StuffedAnimal.all
-    @markers = @stuffed_animals.geocoded.map do |stuffed_animal|
-      {
-        lat: stuffed_animal.latitude,
-        lng: stuffed_animal.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { stuffed_animal: stuffed_animal })
-      }
+    if params[:query].present?
+      if params[:query].is_a? String
+        @stuffed_animals = StuffedAnimal.search_by_species(params[:query])
+      else
+        selected_species = []
+        params[:query].each do |selected|
+          selected_species << StuffedAnimal.search_by_species(selected)
+          @stuffed_animals = selected_species.flatten
+        end
+      end
+
+    else
+      @stuffed_animals = StuffedAnimal.all
+      @markers = @stuffed_animals.geocoded.map do |stuffed_animal|
+        {
+          lat: stuffed_animal.latitude,
+          lng: stuffed_animal.longitude,
+          info_window: render_to_string(partial: "info_window", locals: { stuffed_animal: stuffed_animal })
+        }
+      end
     end
   end
 
