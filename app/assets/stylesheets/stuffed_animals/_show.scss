@@ -3,8 +3,7 @@
 }
 
 .card-show {
-  height: 435px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   width: 74.2%;
 }
 
@@ -32,4 +31,22 @@ p.show-money-text {
   margin-bottom: 30px;
   color: #0E0000;
   opacity: .8;
+}
+
+.card-show-top img {
+  width: 42%;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.card-show-top {
+  min-width: 100%;
+}
+
+.text {
+  width: 100%;
+}
+
+.bot-title p {
+  font-size: 24px;
 }
