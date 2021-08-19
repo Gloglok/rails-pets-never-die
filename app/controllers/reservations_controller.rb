@@ -3,18 +3,18 @@ class ReservationsController < ApplicationController
   before_action :find_reservation, only: %i[accept decline]
 
   def accept
-    @reservation.update_attribute(:status, 'Accepted')
+    @reservation.update_attribute(:status, 'Accepté')
     redirect_to :dashboard
   end
 
   def decline
-    @reservation.update_attribute(:status, 'Declined')
+    @reservation.update_attribute(:status, 'Refusé')
     redirect_to :dashboard
   end
 
   def create
     @reservation = Reservation.new(reservation_params)
-    @reservation.status = 'Pending'
+    @reservation.status = 'Attente'
     @reservation.stuffed_animal = @stuffed_animal
     @reservation.user = current_user
     @reservation.total_price = @reservation.total_days * @stuffed_animal.price
