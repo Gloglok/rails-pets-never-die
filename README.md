@@ -14,5 +14,6 @@ rails db:seed
 rails s
 ```
 
-## Don't forget to add cloudinary url into .env file
+## Don't forget to add cloudinary and mapbox api key url into .env file
 CLOUDINARY_URL=cloudinary://*************
+MAPBOX_API_KEY=**************************
