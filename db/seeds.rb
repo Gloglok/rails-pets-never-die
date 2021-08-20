@@ -366,7 +366,7 @@ mordicus = StuffedAnimal.new(
   rebirth_date: '21/09/2013',
   price: 115,
   weight: 335,
-  user_id: louis.id,
+  user_id: fiden.id,
   vote: (100..1000).to_a.sample,
   rating: rand(1.0..5.0).round(2)
 )
