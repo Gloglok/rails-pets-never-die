@@ -27,11 +27,15 @@ import "bootstrap";
 
 // Internal imports, e.g:
 import { initMapbox } from '../plugins/init_mapbox';
-import { initFlatpickr } from '../plugins/flatpickr'
+import { initFlatpickr } from '../plugins/flatpickr';
+import { initSweetalert } from '../plugins/init_sweetalert';
+
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initMapbox();
-  initFlatpickr()
+  initFlatpickr();
+  initSweetalert(['.sweet-alert-accept', '.sweet-alert-decline', '.sweet-alert-booking', '.sweet-alert-confirm']);
 });

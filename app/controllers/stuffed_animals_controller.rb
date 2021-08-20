@@ -45,6 +45,7 @@ class StuffedAnimalsController < ApplicationController
     @stuffed_animal = StuffedAnimal.new(stuffed_animal_params)
     @stuffed_animal.user = current_user
     if @stuffed_animal.save
+      sleep(5)
       redirect_to stuffed_animal_path(@stuffed_animal)
     else
       render :new

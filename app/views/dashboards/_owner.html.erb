@@ -3,8 +3,7 @@
   <div class="index-container">
     <div class="index-cards">
       <% @reservations.select { |owner| owner.stuffed_animal.user_id == current_user.id }
-                      .sort_by {|obj| obj.status }
-                      .reverse
+                      .sort_by {|x| x.status[4] }
                       .each do |reservation| %>
         <%= link_to stuffed_animal_path(reservation.stuffed_animal) do%>
           <div class="d-flex">
@@ -28,8 +27,8 @@
                 <!-- button accept et decline ici -->
                 <% if reservation.status == 'Attente' %>
                   <div class="d-block button-dashboard">
-                    <%= link_to 'Accepter', accept_reservation_path(reservation), method: :patch, class: 'btn btn-success', data: { confirm: 'Voulez-vous accepter cette réservation?' } %>
-                    <%= link_to 'Refuser', decline_reservation_path(reservation), method: :patch, class: 'btn btn-danger', data: { confirm: 'Êtes-vous sûre de vouloir refuser cette réservation?' } %>
+                    <%= link_to 'Accepter', accept_reservation_path(reservation), method: :patch, class:'btn btn-success sweet-alert-accept' %>
+                    <%= link_to 'Refuser', decline_reservation_path(reservation), method: :patch, class:'btn btn-danger sweet-alert-decline' %>
                   </div>
                 <% end %>
               </div>
