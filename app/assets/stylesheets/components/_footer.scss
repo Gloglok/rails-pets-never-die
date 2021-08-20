@@ -1,19 +1,18 @@
-.footer {
+footer {
   background: rgb(40,55,61);
   background: linear-gradient(90deg, rgba(40,55,61,1) 0%, rgba(40,55,61,1) 0%, rgba(55,27,15,1) 100%);
   text-align: center;
-  padding: 45px;
-  margin: 0;
+  padding: 10px;
 }
 
-.footer p {
+footer p {
   font-size: 20px;
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
-.footer a {
+footer a {
     font-size: 30px;
     color: #7e091e;
 }

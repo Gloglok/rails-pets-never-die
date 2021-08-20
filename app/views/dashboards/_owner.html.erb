@@ -1,6 +1,6 @@
 <div class="tab-pane fade" id="pills-owner" role="tabpanel" aria-labelledby="pills-owner-tab">
   <% @owner_reservations %>
-  <div class="index-container">
+  <div class="index-container" style="min-height: 95vh;">
     <div class="index-cards">
       <% @reservations.select { |owner| owner.stuffed_animal.user_id == current_user.id }
                       .sort_by {|x| x.status[4] }

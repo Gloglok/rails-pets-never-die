@@ -1,7 +1,7 @@
 .card-product {
   overflow: hidden;
   height: 160px;
-  background: white;
+  background: #f5f5f5;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   display: flex;
   align-items: center;
@@ -34,7 +34,7 @@
 }
 
 .card-product .card-product-infos {
-  padding: 24px;
+  padding: 35px;
   min-width: 460px;
 }
 
