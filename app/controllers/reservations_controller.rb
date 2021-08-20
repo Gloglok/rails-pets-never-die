@@ -4,12 +4,10 @@ class ReservationsController < ApplicationController
 
   def accept
     @reservation.update_attribute(:status, 'Accepté')
-    redirect_to :dashboard
   end
 
   def decline
     @reservation.update_attribute(:status, 'Refusé')
-    redirect_to :dashboard
   end
 
   def create
@@ -19,6 +17,7 @@ class ReservationsController < ApplicationController
     @reservation.user = current_user
     @reservation.total_price = @reservation.total_days * @stuffed_animal.price
     if @reservation.save
+      sleep(5)
       redirect_to dashboard_path
     else
       render 'stuffed_animals/show'
