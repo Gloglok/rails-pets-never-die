@@ -39,3 +39,5 @@ document.addEventListener('turbolinks:load', () => {
   initFlatpickr();
   initSweetalert(['.sweet-alert-accept', '.sweet-alert-decline', '.sweet-alert-booking', '.sweet-alert-confirm']);
 });
+
+import "controllers"

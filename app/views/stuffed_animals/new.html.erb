@@ -15,8 +15,14 @@
       <%= f.button :submit, 'Ajouter', class: "btn btn-primary my-3" %>
     </div>
 
-    <div class='col-sm'>
-      <%= f.input :photo, required: true, as: :file %>
+    <div class='col-sm' data-controller="photo-preview">
+      <%= f.input :photo,
+                  required: true,
+                  as: :file,
+                  input_html: { "data-photo-preview-target": "input",
+                                "data-action": "input->photo-preview#preview" }
+      %>
+      <div id="display_image" data-photo-preview-target="output"></div>
     </div>
     <% end %>
   </div>
