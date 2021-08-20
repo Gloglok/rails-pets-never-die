@@ -3,18 +3,11 @@ class StuffedAnimalsController < ApplicationController
 
   def index
     if params[:query].present?
-      if params[:query].is_a? String
-        @stuffed_animals = StuffedAnimal.search_by_species(params[:query])
-      else
-        selected_species = []
-        params[:query].each do |selected|
-          selected_species << StuffedAnimal.search_by_species(selected)
-          @stuffed_animals = selected_species.flatten
-        end
-      end
+      set_stuffed_animals_by_query
     else
       @stuffed_animals = StuffedAnimal.all
     end
+    sort_stuffed_animals_by_geocoding if params[:city].present?
     set_markers
   end
 
@@ -50,6 +43,27 @@ class StuffedAnimalsController < ApplicationController
   def stuffed_animal_params
     params.require(:stuffed_animal).permit(:name, :species, :user_id, :description,
                                            :rebirth_date, :price, :weight, :address, :photo)
+  end
+
+  def set_stuffed_animals_by_query
+    if params[:query].is_a? String
+      @stuffed_animals = StuffedAnimal.search_by_species(params[:query])
+    else
+      selected_species = []
+      params[:query].each do |selected|
+        selected_species << StuffedAnimal.search_by_species(selected)
+      end
+      @stuffed_animals = selected_species.flatten
+    end
+  end
+
+  def dist_between(coordinates_a, coordinates_b)
+    Geocoder::Calculations.distance_between(coordinates_a, coordinates_b)
+  end
+
+  def sort_stuffed_animals_by_geocoding
+    city_coord = Geocoder.search(params[:city]).first.coordinates
+    @stuffed_animals = @stuffed_animals.near(city_coord, 2000)
   end
 
   def set_markers
