@@ -3,8 +3,7 @@
   <div class="index-container">
     <div class="index-cards">
       <% @reservations.select { |owner| owner.stuffed_animal.user_id == current_user.id }
-                      .sort_by {|x| x.status[1] }
-                      .reverse
+                      .sort_by {|x| x.status[4] }
                       .each do |reservation| %>
         <%= link_to stuffed_animal_path(reservation.stuffed_animal) do%>
           <div class="d-flex">

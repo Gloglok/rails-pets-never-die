@@ -1,9 +1,9 @@
-
 <div class="tab-pane fade show active" id="pills-user" role="tabpanel" aria-labelledby="pills-user-tab">
   <% @reservations %>
   <div class="index-container">
       <div class="index-cards">
-        <% @reservations.sort_by {|obj| obj.status }.reverse.each do |reservation| %>
+        <% @reservations.sort_by {|obj| obj.status[4] }
+                        .each do |reservation| %>
           <%= link_to stuffed_animal_path(reservation.stuffed_animal) do%>
             <div class="card-product mb-2 dashboard-card">
             <%= cl_image_tag reservation.stuffed_animal.photo.key, crop: :fill, class:"card-index-img" %>
