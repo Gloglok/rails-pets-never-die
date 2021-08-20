@@ -5,6 +5,7 @@
 
 .dashboard-card {
   min-width: 600px;
+  transition: all .2s ease-in-out;
   .card-index-img {
     min-height: 160px;
     min-width: 150px;
@@ -13,6 +14,9 @@
     font-size: 16px;
     padding-top: 20px;
   }
+  &:hover {
+    transform: scale(1.01);
+  }
 }
 
 .dashboard-card-info{
@@ -20,7 +24,6 @@
 }
 
 .button-dashboard a {
-  margin-top: 10px;
   font-size: 12px;
 }
 

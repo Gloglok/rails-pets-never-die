@@ -1,6 +1,9 @@
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
+import { French } from "flatpickr/dist/l10n/fr.js";
 import rangePlugin from "flatpickr/dist/plugins/rangePlugin";
+
+flatpickr.l10ns.default.firstDayOfWeek = 1; // Start week on mondays
 
 const initFlatpickr = () => {
   const reservationForm = document.getElementById('reservation-form-div');
@@ -11,6 +14,7 @@ const initFlatpickr = () => {
       minDate: "today",
       inline: true,
       dateFormat: "Y-m-d",
+      "locale": French,
       "disable": reservations
     })
 
