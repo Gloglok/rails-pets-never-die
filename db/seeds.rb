@@ -190,7 +190,7 @@ bruce.save!
 
 timon = StuffedAnimal.new(
   name: 'Timon',
-  species: 'suricate',
+  species: 'écureuil',
   description: " Mammifère carnivore de la famille des Mangoustes (et des chiens de prairie) vivant dans le sud de l'Afrique. Il est d'un caractère futé, imprévisible et furtif. D'une énergie intarissable, entraînante et optimiste, ils ont pour devise « Hakuna matata » qui signifie « sans souci ».",
   address: '2 Paul Kruger Street, Pretoria Central, Pretoria, 0002, Afrique du Sud',
   rebirth_date: '09/03/2005',
@@ -258,7 +258,7 @@ scrat.save!
 
 milka = StuffedAnimal.new(
   name: 'Milka',
-  species: 'suricate',
+  species: 'écureuil',
   description: "Milka est une marmotte qui met le chocolat dans le papier d'alu",
   address: '10 Passage de la Poule Noire, 44000 Nantes',
   rebirth_date: '22/02/2011',
@@ -343,7 +343,7 @@ clarence.save!
 
 ourscoca = StuffedAnimal.new(
   name: "L'ours-coca",
-  species: 'lion',
+  species: 'ours',
   description: "c’est en 1993, lors de la mise en place de la campagne « Always Coca-Cola », que The Coca-Cola Company a lancé le spot, « Northern Lights » dont le héros est devenu l'un des symboles les plus populaires de la publicité Coca-Cola : L'ours-coca",
   address: 'La Mirada Avenue, Los Angeles, CA 90029, États-Unis',
   rebirth_date: '01/01/1994',
@@ -360,7 +360,7 @@ ourscoca.save!
 
 mordicus = StuffedAnimal.new(
   name: "Mordicus",
-  species: 'lion',
+  species: 'requin',
   description: "Mordicus est un magnifique requin d'appartement",
   address: 'Lundip Aqqutaa B1664, Nanortalik, Groenland',
   rebirth_date: '21/09/2013',
