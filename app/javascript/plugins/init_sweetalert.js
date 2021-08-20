@@ -54,7 +54,7 @@ const initSweetalert = (selector) => {
   if (booking) { // protect other pages
     Array.from(booking).forEach((button) => button.addEventListener('click', () => {
       swal({
-        title: "Veuillez confirmer votre réservation..",
+        title: "Êtes-vous sûre de vouloir réserver?",
         text: "Le délai d'attente varie en 2 et 5 jours ouvrable",
         icon: "info",
         buttons: true,
