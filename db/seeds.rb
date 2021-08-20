@@ -18,6 +18,21 @@ file = File.open(Rails.root.join('db/fixtures/users/avatar-maxime.jpg'))
 maxime.avatar.attach(io: file, filename: 'avatar-maxime.jpg', content_type: 'image/jpeg')
 maxime.save!
 
+fiden = User.new(first_name: "Fiden", last_name: "Han", email: 'fiden@example.com', password: "azerty")
+file = File.open(Rails.root.join('db/fixtures/users/avatar-fiden.jpg'))
+fiden.avatar.attach(io: file, filename: 'avatar-fiden.jpg', content_type: 'image/jpeg')
+fiden.save!
+
+louis = User.new(first_name: "Louis", last_name: "Duquennoy", email: 'louis@example.com', password: "azerty")
+file = File.open(Rails.root.join('db/fixtures/users/avatar-louis.jpg'))
+louis.avatar.attach(io: file, filename: 'avatar-louis.jpg', content_type: 'image/jpeg')
+louis.save!
+
+melanie = User.new(first_name: "Melanie", last_name: "Rat", email: 'melanie@example.com', password: "azerty")
+file = File.open(Rails.root.join('db/fixtures/users/avatar-melanie.jpg'))
+melanie.avatar.attach(io: file, filename: 'avatar-melanie.jpg', content_type: 'image/jpeg')
+melanie.save!
+
 puts "Generate 13 stuffed animals..."
 
 baloo = StuffedAnimal.new(
@@ -90,7 +105,7 @@ franck.save!
 
 sobaka = StuffedAnimal.new(
   name: 'Sobaka',
-  species: 'wolf',
+  species: 'loup',
   description: 'Loup affectif qui a subi un légèr changement à cause de la radioactivité, attention! taux becquerel au-dessus de la moyenne',
   address: 'Chornobyl, Kyiv Oblast, Ukraine',
   rebirth_date: '26/04/1986',
@@ -240,5 +255,124 @@ scrat = StuffedAnimal.new(
 file = File.open(Rails.root.join('db/fixtures/stuffed_animals/wolf.jpg'))
 scrat.photo.attach(io: file, filename: 'wolf.jpg', content_type: 'image/jpeg')
 scrat.save!
+
+milka = StuffedAnimal.new(
+  name: 'Milka',
+  species: 'suricate',
+  description: "Milka est une marmotte qui met le chocolat dans le papier d'alu",
+  address: '10 Passage de la Poule Noire, 44000 Nantes',
+  rebirth_date: '22/02/2011',
+  price: 187,
+  weight: 30.1,
+  user_id: melanie.id,
+  vote: (100..1000).to_a.sample,
+  rating: rand(1.0..5.0).round(2)
+)
+
+file = File.open(Rails.root.join('db/fixtures/stuffed_animals/marmotte.jpg'))
+milka.photo.attach(io: file, filename: 'marmotte.jpg', content_type: 'image/jpeg')
+milka.save!
+
+chaussettes = StuffedAnimal.new(
+  name: 'Chaussettes',
+  species: 'loup',
+  description: "Chaussettes est le meilleur amie de Kevin Costner",
+  address: '123 Yonge Street, Toronto, Canada',
+  rebirth_date: '12/12/1994',
+  price: 287,
+  weight: 130.1,
+  user_id: melanie.id,
+  vote: (100..1000).to_a.sample,
+  rating: rand(1.0..5.0).round(2)
+)
+
+file = File.open(Rails.root.join('db/fixtures/stuffed_animals/wolf1.jpg'))
+chaussettes.photo.attach(io: file, filename: 'wolf1.jpg', content_type: 'image/jpeg')
+chaussettes.save!
+
+medort = StuffedAnimal.new(
+  name: 'Medort',
+  species: 'chien',
+  description: "Medort est le meilleur amie de l'homme",
+  address: '34 Boulevard Vasserot, 83990 Saint-Tropez',
+  rebirth_date: '12/12/1984',
+  price: 77,
+  weight: 105.1,
+  user_id: melanie.id,
+  vote: (100..1000).to_a.sample,
+  rating: rand(1.0..5.0).round(2)
+)
+
+file = File.open(Rails.root.join('db/fixtures/stuffed_animals/dog4.jpg'))
+medort.photo.attach(io: file, filename: 'dog4.jpg', content_type: 'image/jpeg')
+medort.save!
+
+alex = StuffedAnimal.new(
+  name: 'Alex',
+  species: 'lion',
+  description: "Alex est le sosie officiel héros de madagascar",
+  address: '34 Boulevard Vasserot, 83990 Saint-Tropez',
+  rebirth_date: '22/10/2014',
+  price: 165,
+  weight: 245.9,
+  user_id: melanie.id,
+  vote: (100..1000).to_a.sample,
+  rating: rand(1.0..5.0).round(2)
+)
+
+file = File.open(Rails.root.join('db/fixtures/stuffed_animals/lion2.jpg'))
+alex.photo.attach(io: file, filename: 'lion2.jpg', content_type: 'image/jpeg')
+alex.save!
+
+clarence = StuffedAnimal.new(
+  name: 'Clarence',
+  species: 'lion',
+  description: "Clarence est le héros de Daktari",
+  address: 'leeland street, houston, texas',
+  rebirth_date: '20/10/1991',
+  price: 225,
+  weight: 315,
+  user_id: fiden.id,
+  vote: (100..1000).to_a.sample,
+  rating: rand(1.0..5.0).round(2)
+)
+
+file = File.open(Rails.root.join('db/fixtures/stuffed_animals/lion3.jpg'))
+clarence.photo.attach(io: file, filename: 'lion3.jpg', content_type: 'image/jpeg')
+clarence.save!
+
+ourscoca = StuffedAnimal.new(
+  name: "L'ours-coca",
+  species: 'lion',
+  description: "c’est en 1993, lors de la mise en place de la campagne « Always Coca-Cola », que The Coca-Cola Company a lancé le spot, « Northern Lights » dont le héros est devenu l'un des symboles les plus populaires de la publicité Coca-Cola : L'ours-coca",
+  address: 'La Mirada Avenue, Los Angeles, CA 90029, États-Unis',
+  rebirth_date: '01/01/1994',
+  price: 25,
+  weight: 415,
+  user_id: fiden.id,
+  vote: (100..1000).to_a.sample,
+  rating: rand(1.0..5.0).round(2)
+)
+
+file = File.open(Rails.root.join('db/fixtures/stuffed_animals/bear2.jpg'))
+ourscoca.photo.attach(io: file, filename: 'bear2.jpg', content_type: 'image/jpeg')
+ourscoca.save!
+
+mordicus = StuffedAnimal.new(
+  name: "Mordicus",
+  species: 'lion',
+  description: "Mordicus est un magnifique requin d'appartement",
+  address: 'Lundip Aqqutaa B1664, Nanortalik, Groenland',
+  rebirth_date: '21/09/2013',
+  price: 115,
+  weight: 335,
+  user_id: louis.id,
+  vote: (100..1000).to_a.sample,
+  rating: rand(1.0..5.0).round(2)
+)
+
+file = File.open(Rails.root.join('db/fixtures/stuffed_animals/shark2.jpg'))
+mordicus.photo.attach(io: file, filename: 'shark2.jpg', content_type: 'image/jpeg')
+mordicus.save!
 
 puts "Finished!"
