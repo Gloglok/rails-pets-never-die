@@ -12,17 +12,10 @@ class StuffedAnimalsController < ApplicationController
           @stuffed_animals = selected_species.flatten
         end
       end
-
     else
       @stuffed_animals = StuffedAnimal.all
-      @markers = @stuffed_animals.geocoded.map do |stuffed_animal|
-        {
-          lat: stuffed_animal.latitude,
-          lng: stuffed_animal.longitude,
-          info_window: render_to_string(partial: "info_window", locals: { stuffed_animal: stuffed_animal })
-        }
-      end
     end
+    set_markers
   end
 
   def show
@@ -57,5 +50,15 @@ class StuffedAnimalsController < ApplicationController
   def stuffed_animal_params
     params.require(:stuffed_animal).permit(:name, :species, :user_id, :description,
                                            :rebirth_date, :price, :weight, :address, :photo)
+  end
+
+  def set_markers
+    @markers = @stuffed_animals.geocoded.map do |stuffed_animal|
+      {
+        lat: stuffed_animal.latitude,
+        lng: stuffed_animal.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { stuffed_animal: stuffed_animal })
+      }
+    end
   end
 end
