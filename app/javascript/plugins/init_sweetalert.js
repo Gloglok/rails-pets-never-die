@@ -74,23 +74,11 @@ const initSweetalert = (selector) => {
   if (confirm) { // protect other pages
     Array.from(confirm).forEach((button) => button.addEventListener('click', () => {
       swal({
-        title: "Voulez-vous continuer?",
-        icon: "info",
-        buttons: true,
-      }).then((doAction) => {
-        if (doAction) {
-          swal("Terminé", {
-            icon: "success",
-          })
-        } else {
-          swal("N'hésitez pas à revenir!", {
-            icon: 'info',
-          }).then(() => {
-            location.reload();
-          });
-        }})
+        title: "Terminé!",
+        icon: "success",
+        button: "Ok!",
+      });
     }));
   }
 };
-
 export { initSweetalert };
