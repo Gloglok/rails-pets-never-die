@@ -1,6 +1,6 @@
-import flatpickr from "flatpickr"
-import "flatpickr/dist/flatpickr.min.css"
-import rangePlugin from "flatpickr/dist/plugins/rangePlugin"
+import flatpickr from "flatpickr";
+import "flatpickr/dist/flatpickr.min.css";
+import rangePlugin from "flatpickr/dist/plugins/rangePlugin";
 
 const initFlatpickr = () => {
   const reservationForm = document.getElementById('reservation-form-div');
